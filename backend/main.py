@@ -6,7 +6,7 @@ import os
 
 app = FastAPI()
 
-# Allow CORS for local development (adjust origins in production)
+# Allow CORS for local development
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -73,3 +73,5 @@ def download_csv():
     if os.path.exists(CSV_PATH):
         return FileResponse(CSV_PATH, filename="final_grades.csv", media_type='text/csv')
     return {"error": "No CSV file found."}
+
+#code comment
